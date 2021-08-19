@@ -26,7 +26,7 @@ a{
 /* section 1 */
 .section-1{
     padding-top: 15vh;
-    padding-left: 10vw;
+    padding-left: 3vw;
     /*padding-right: 5vw;*/
     text-align: center;
 }
@@ -55,7 +55,7 @@ a{
     padding-top: 10vh;
     /*width: 80%;*/
     padding-bottom: 10vh;
-    padding-left: 5vw;
+    padding-left: 0vw;
     padding-right: 10vw;
     overflow:hidden;
     word-wrap: break-word;
@@ -94,7 +94,7 @@ a{
 .section-2 a{
     display: /*block;
     padding: 5px*/;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding-bottom: 10px;
     /*padding-left: 0;
     width: 100px;*/
