@@ -23,6 +23,11 @@ a{
     color: #3ca2c8; /*#7A7C80;*/
     text-decoration: none;
 }
+
+b{
+    font-weight: bolder;
+}
+
 /* section 1 */
 .section-1{
     padding-top: 15vh;
