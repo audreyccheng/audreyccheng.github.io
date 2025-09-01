@@ -1,222 +1,542 @@
-<!doctype html> <html lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width,initial-scale=1" /> <title>Audrey Cheng — CS PhD</title> <link rel="stylesheet" href="./assets/css/site.css" /> <style> html { scroll-behavior: smooth; } /* Fluid typography */ h1 { font-size: clamp(1.6rem, 2.4vw + 1rem, 2.2rem); } h2 { font-size: clamp(1.25rem, 1.2vw + 1rem, 1.6rem); } p, li { font-size: clamp(1rem, 0.3vw + 0.95rem, 1.05rem); } /* Responsive hero layout */ .hero { display: grid; grid-template-columns: clamp(112px, 20vw, 180px) 1fr; gap: clamp(0.75rem, 1.5vw, 1.25rem); align-items: start; } .hero img { width: clamp(112px, 20vw, 180px); height: clamp(112px, 20vw, 180px); border-radius: 16px; object-fit: cover; } .meta { margin-top: .5rem; font-size: .95rem; } .section { margin-top: 2rem; } .news .item { display:grid; grid-template-columns: 100px 1fr; gap: .75rem; padding: .25rem 0; } .news .date { color: var(--muted); font-variant-numeric: tabular-nums; } .pub { margin: 1rem 0 1.25rem; } .pub .title { font-weight: 700; } .pub .authors { color: var(--muted); } .pub .venue { margin-top: .15rem; } .pub .links a { margin-right: .65rem; } .divider { border-top: 1px solid rgba(2,6,23,.08); margin: 2rem 0 1.25rem; } /* Smaller screens */ @media (max-width: 700px) { .hero { grid-template-columns: 1fr; } .news .item { grid-template-columns: 90px 1fr; } } </style> </head> <body id="top"> <header class="container"> <nav class="nav"> <div class="brand"><a href="#top" style="text-decoration:none; color:inherit;">Audrey Cheng</a></div> <div class="links"> <a href="#contact">Contact</a> </div> </nav> </header> <main class="container"> <section class="card"> <!-- About --> <div class="hero" id="about"> <img src="./assets/img/audrey.jpg" alt="Portrait of Audrey Cheng" /> <div> <h1>Hello, I’m Audrey!</h1> <p> I am a fifth-year PhD student in Computer Science at UC Berkeley in the <a href="https://sky.cs.berkeley.edu/contact/">Sky Computing Lab</a>, advised by <a href="https://people.eecs.berkeley.edu/~istoica/">Ion Stoica</a> and <a href="https://nacrooks.github.io">Natacha Crooks</a>. My research focuses on transaction processing for database systems. </p> <p> Previously, I graduated with a BSE in Operations Research and Financial Engineering from Princeton University, where I worked with <a href="https://www.cs.princeton.edu/~wlloyd/">Wyatt Lloyd</a> and <a href="https://www.cs.princeton.edu/~li/">Kai Li</a>. I interned on the Themis team at Facebook, focusing on consistency and isolation in large-scale systems. I’m supported by an <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship</a>, a <a href="https://research.facebook.com/blog/2022/2/announcing-the-recipients-of-the-2022-meta-phd-research-fellowship/">Meta PhD Research Fellowship</a>, and a <a href="https://grad.berkeley.edu/admissions/apply/fellowships-entering/">Berkeley Chancellor’s Fellowship</a>. </p> <p class="meta"> Email: <a href="mailto:accheng@berkeley.edu">accheng@berkeley.edu</a> · GitHub: <a href="https://github.com/audreyccheng">audreyccheng</a> </p> </div> </div>
-  <!-- Latest News -->
-  <div class="section news" id="news">
-    <h2>Latest News</h2>
-    <div class="item">
-      <div class="date">Jun 2024</div>
-      <div>Transaction scheduling paper accepted into VLDB 2024 — <a href="https://www.vldb.org/pvldb/vol17/p2694-cheng.pdf">pdf</a></div>
-    </div>
-    <div class="item">
-      <div class="date">Dec 2023</div>
-      <div>Mammoth transactions paper accepted into VLDB 2024 — <a href="https://dl-acm-org.libproxy.berkeley.edu/doi/pdf/10.14778/3636218.3636241">pdf</a></div>
-    </div>
-    <div class="item">
-      <div class="date">Mar 2023</div>
-      <div>DeToX accepted into OSDI 2023 — <a href="https://www.usenix.org/system/files/osdi23-cheng.pdf">pdf</a></div>
-    </div>
-    <div class="item">
-      <div class="date">Apr 2022</div>
-      <div>TAOBench accepted into VLDB 2022 — <a href="https://www.vldb.org/pvldb/vol15/p1965-cheng.pdf">pdf</a></div>
-    </div>
-    <div class="item">
-      <div class="date">Aug 2021</div>
-      <div>RAMP-TAO awarded Best Industry Paper at VLDB 2021 — <a href="http://www.vldb.org/pvldb/vol14/p3014-cheng.pdf">pdf</a></div>
-    </div>
-  </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Audrey Cheng — CS PhD</title>
+  <link rel="stylesheet" href="./assets/css/site.css" />
+  <style>
+    html { scroll-behavior: smooth; }
 
-  <div class="divider"></div>
+    /* Fluid typography */
+    h1 { font-size: clamp(1.6rem, 2.4vw + 1rem, 2.2rem); line-height: 1.15; letter-spacing: -0.01em; }
+    /* Increased section title size */
+    h2 { font-size: clamp(1.35rem, 1.4vw + 1.1rem, 2rem); line-height: 1.2; }
+    p, li { font-size: clamp(1rem, 0.3vw + 0.95rem, 1.05rem); }
 
-  <!-- Publications -->
-  <div class="section" id="publications">
-    <h2>Publications</h2>
+    /* Responsive hero layout */
+    .hero {
+      display: grid;
+      grid-template-columns: clamp(150px, 25vw, 250px) 1fr;
+      gap: clamp(1rem, 2vw, 1.5rem);
+      align-items: center;
+    }
+    .hero img {
+      width: clamp(150px, 25vw, 250px);
+      height: clamp(150px, 25vw, 250px);
+      border-radius: 16px;
+      object-fit: cover;
+      border: 1px solid var(--border, rgba(2,6,23,0.10));
+      box-shadow: 0 10px 18px rgba(2,6,23,0.06);
+    }
+    .hero > div { max-width: 70ch; }
 
-    <div class="pub">
-      <div class="title">Fair Transaction Processing for Multi-Tenant Databases</div>
-      <div class="authors"><b>Audrey Cheng</b>, Aaron Kabcenell, Xiao Shi, Jolene Huey, Peter Bailis, Natacha Crooks, Ion Stoica</div>
-      <div class="venue">VLDB 2025</div>
-      <div class="links">
-        <a href="https://www.vldb.org/pvldb/vol18/p2602-cheng.pdf">pdf</a>
-        <a href="https://github.com/audreyccheng/fair-txn-scheduler">code</a>
+    .meta { margin-top: .5rem; font-size: .95rem; }
+
+    .section { margin-top: 1.5rem; padding-top: 0.5rem; }
+
+    .news .item {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: .75rem;
+      padding: .25rem 0;
+    }
+    .news .date {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      opacity: .9;
+    }
+
+    .pub { margin: 1rem 0 1.25rem; }
+    .pub .title { font-weight: 700; }
+    .pub .authors { color: var(--muted); }
+    .pub .venue { color: var(--muted); font-style: italic; }
+    .pub .links a { margin-right: .5rem; }
+
+    .divider { border-top: 1px solid var(--border, rgba(2,6,23,.08)); margin: 2rem 0 1.25rem; }
+    .section-divider { border-top: 1px solid var(--border, #e5e7eb); margin: 2.5rem 0 1.5rem; }
+
+    /* Anchor offset for sticky header */
+    [id] { scroll-margin-top: 86px; }
+
+    /* Smaller screens */
+    @media (max-width: 700px) {
+      .hero { grid-template-columns: 1fr; align-items: start; }
+      .news .item { grid-template-columns: 90px 1fr; }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <a class="skip-link" href="#about">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" role="navigation" aria-label="Primary">
+        <div class="brand">Audrey Cheng</div>
+        <div class="links">
+          <!-- <a href="#about">About</a>
+          <a href="#news">News</a> -->
+          <a href="#publications">Publications</a>
+          <!-- <a href="#talks">Talks</a>
+          <a href="#awards">Awards</a> -->
+          <!-- <a href="#cv">CV</a> -->
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <!-- About -->
+      <div class="hero" id="about">
+        <img src="./assets/img/IMG_3707.jpg" alt="Portrait of Audrey Cheng" loading="eager" width="250" height="250" />
+        <div>
+          <h1>Hello, I'm Audrey!</h1>
+          <p>
+            I am a final-year PhD student in Computer Science at UC Berkeley in the 
+            <a href="https://sky.cs.berkeley.edu/contact/">Sky Computing Lab</a>, 
+            advised by <a href="https://people.eecs.berkeley.edu/~istoica/">Ion Stoica</a> 
+            and <a href="https://nacrooks.github.io">Natacha Crooks</a>. 
+            My research focuses on transaction processing for database systems, particularly on leveraging scheduling algorithms to improve performance. I also work closely with the Themis team at Meta, focusing on consistency and isolation 
+            in large-scale systems.
+          
+            Previously, I graduated with a BSE from Princeton University, where I worked with 
+            <a href="https://www.cs.princeton.edu/~wlloyd/">Wyatt Lloyd</a> and 
+            <a href="https://www.cs.princeton.edu/~li/">Kai Li</a>. 
+             I am supported by an 
+            <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship</a>, a 
+            <a href="https://research.facebook.com/blog/2022/2/announcing-the-recipients-of-the-2022-meta-phd-research-fellowship/">Meta PhD Research Fellowship</a>, 
+            and a <a href="https://grad.berkeley.edu/admissions/apply/fellowships-entering/">Berkeley Chancellor's Fellowship</a>.
+          </p>
+          <div class="social-links meta">
+            <a href="mailto:accheng@berkeley.edu" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>
+                <path d="M22 7l-10 6L2 7"/>
+              </svg>
+              <span>Email</span>
+            </a>
+            <a href="https://github.com/audreyccheng" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12a12 12 0 0 0 8.21 11.41c.6.11.82-.26.82-.58l-.01-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.77-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.85.12 3.15.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.22.7.82.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="http://linkedin.com/in/audreyccheng/" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M22.23 0H1.77C.79 0 0 .78 0 1.74v20.52C0 23.22.79 24 1.77 24h20.46c.98 0 1.77-.78 1.77-1.74V1.74C24 .78 23.21 0 22.23 0zM7.06 20.45H3.56V9h3.5v11.45zM5.31 7.43a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm15.14 13.02h-3.49v-5.93c0-1.41-.03-3.22-1.96-3.22-1.96 0-2.26 1.53-2.26 3.12v6.03H9.25V9h3.35v1.57h.05c.47-.9 1.63-1.85 3.35-1.85 3.59 0 4.25 2.36 4.25 5.43v6.3z"/>
+                </svg>
+                <span>LinkedIn</span>
+                </a>                
+            <a href="https://scholar.google.com/citations?user=a0BFsYUAAAAJ&hl=en" aria-label="Google Scholar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10L12 4 2 10l10 6 10-6z"/>
+                <path d="M6 12v5a6 6 0 0 0 12 0v-5"/>
+              </svg>
+              <span>Scholar</span>
+            </a>
+            <a href="https://x.com/audreyccheng" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M23 5.92a9.54 9.54 0 0 1-2.82.82 4.93 4.93 0 0 0 2.16-2.72 9.86 9.86 0 0 1-3.12 1.22 4.92 4.92 0 0 0-8.49 4.48A13.96 13.96 0 0 1 1.67 4.15a4.92 4.92 0 0 0 1.52 6.57 4.86 4.86 0 0 1-2.23-.62v.06c0 2.38 1.69 4.37 3.94 4.82a4.93 4.93 0 0 1-2.22.08 4.93 4.93 0 0 0 4.6 3.42A9.87 9.87 0 0 1 0 20.41a13.94 13.94 0 0 0 7.56 2.22c9.05 0 14.01-7.67 13.7-14.55A9.93 9.93 0 0 0 23 5.92z"/>
+              </svg>
+              <span>Twitter</span>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="pub">
-      <div class="title">SkyStore: Cost-Optimized Object Storage Across Regions and Clouds</div>
-      <div class="authors">Shu Liu, Xiangxi Mo, Moshik Hershcovitch, Henric Zhang, <b>Audrey Cheng</b>, Guy Girmonsky, Gil Vernik, Michael Factor, Tiemo Bang, Soujanya Ponnapalli, Natacha Croks, Joseph E. Gonzalez, Danny Harnik, Ion Stoica</div>
-      <div class="venue">VLDB 2025</div>
-      <div class="links">
-        <a href="https://www.vldb.org/pvldb/vol18/p2602-cheng.pdf">pdf</a>
-        <a href="https://github.com/lynnliu030/artifact-eval">code</a>
+      <div class="section-divider"></div>
+
+      <!-- Latest News -->
+      <div class="section news" id="news">
+        <h2>Latest News</h2>
+        <div class="item">
+            <div class="date">Sep 2025</div>
+            <div><a href="https://www.vldb.org/pvldb/vol18/p2602-cheng.pdf">Fair transactions paper</a> accepted into VLDB 2025!</div>
+        </div>
+        <div class="item">
+            <div class="date">Sep 2025</div>
+            <div><a href="https://www.vldb.org/pvldb/vol18/p2084-liu.pdf">SkyStore paper</a> accepted into VLDB 2025!</div>
+        </div>
+        <div class="item">
+          <div class="date">May 2025</div>
+          <div><a href="https://www.vldb.org/pvldb/vol17/p2694-cheng.pdf">LLM-SQL paper</a> accepted into MLSys 2025!</div>
+        </div>
+        <div class="item">
+            <div class="date">Oct 2024</div>
+            <div>Selected for <a href="https://risingstars-eecs.mit.edu/participants/audrey-cheng/">EECS Rising Stars</a> workshop!</div>
+          </div>
+        <div class="item">
+          <div class="date">Jun 2024</div>
+          <div><a href="https://www.vldb.org/pvldb/vol17/p2694-cheng.pdf">Transaction scheduling paper</a> accepted into VLDB 2024!</div>
+        </div>
+        <!-- <div class="item">
+          <div class="date">Dec 2023</div>
+          <div><a href="https://dl-acm-org.libproxy.berkeley.edu/doi/pdf/10.14778/3636218.3636241">Mammoth transactions paper</a> accepted into VLDB 2024!</div>
+        </div>
+        <div class="item">
+          <div class="date">Mar 2023</div>
+          <div><a href="https://www.usenix.org/system/files/osdi23-cheng.pdf">DeToX</a> accepted into OSDI 2023!</div>
+        </div>
+        <div class="item">
+          <div class="date">Apr 2022</div>
+          <div><a href="https://www.vldb.org/pvldb/vol15/p1965-cheng.pdf">TAOBench</a> accepted into VLDB 2022!</div>
+        </div>
+        <div class="item">
+          <div class="date">Aug 2021</div>
+          <div><a href="http://www.vldb.org/pvldb/vol14/p3014-cheng.pdf">RAMP-TAO</a> awarded Best Industry Paper at VLDB 2021!</div>
+        </div> -->
       </div>
-    </div>
 
-    <div class="pub">
-      <div class="title">Towards Optimal Transaction Scheduling</div>
-      <div class="authors"><b>Audrey Cheng</b>, Aaron Kabcenell, Jason Chan, Xiao Shi, Peter Bailis, Natacha Crooks, Ion Stoica</div>
-      <div class="venue">VLDB 2024</div>
-      <div class="links">
-        <a href="https://www.vldb.org/pvldb/vol17/p2694-cheng.pdf">pdf</a>
-        <a href="https://github.com/audreyccheng/transaction-scheduling">code</a>
+      <div class="section-divider"></div>
+
+      <!-- Publications -->
+      <div class="section" id="publications">
+        <h2>Publications</h2>
+
+        <div class="pub">
+          <div class="title">Fair Transaction Processing for Multi-Tenant Databases</div>
+          <div class="authors">
+            <b>Audrey Cheng</b>, Aaron Kabcenell, Xiao Shi, Jolene Huey, Peter Bailis, 
+            Natacha Crooks, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">VLDB 2025</span>
+            <span class="links">
+              <a href="https://www.vldb.org/pvldb/vol18/p2602-cheng.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/audreyccheng/fair-txn-scheduler">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="title">SkyStore: Cost-Optimized Object Storage Across Regions and Clouds</div>
+          <div class="authors">
+            Shu Liu, Xiangxi Mo, Moshik Hershcovitch, Henric Zhang, <b>Audrey Cheng</b>, 
+            Guy Girmonsky, Gil Vernik, Michael Factor, Tiemo Bang, Soujanya Ponnapalli, 
+            Natacha Croks, Joseph E. Gonzalez, Danny Harnik, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">VLDB 2025</span>
+            <span class="links">
+              <a href="https://www.vldb.org/pvldb/vol18/p2084-liu.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/lynnliu030/artifact-eval">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+            <div class="title">Optimizing LLM Queries in Relational Workloads</div>
+            <div class="authors">
+              Shu Liu, Asim Biswal, Amog Kamsetty, <b>Audrey Cheng</b>, Luis Gaspar Schroeder, 
+              Liana Patel, Shiyi Cao, Xiangxi Mo, Joseph E. Gonzalez, Ion Stoica, Matei Zaharia
+            </div>
+            <div class="meta-line">
+              <span class="venue">MLSys 2025</span>
+              <span class="links">
+                <a href="https://openreview.net/pdf?id=R7bK9yycHp">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                  </svg>
+                  <span>PDF</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        <div class="pub">
+          <div class="title">Towards Optimal Transaction Scheduling</div>
+          <div class="authors">
+            <b>Audrey Cheng</b>, Aaron Kabcenell, Jason Chan, Xiao Shi, Peter Bailis, 
+            Natacha Crooks, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">VLDB 2024</span>
+            <span class="links">
+              <a href="https://www.vldb.org/pvldb/vol17/p2694-cheng.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/audreyccheng/transaction-scheduling">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="title">Mammoths are Slow: The Overlooked Transactions of Graph Data</div>
+          <div class="authors">
+            <b>Audrey Cheng</b>, Jack Waudby, Hugo Firth, Natacha Crooks, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">VLDB 2024</span>
+            <span class="links">
+              <a href="https://dl-acm-org.libproxy.berkeley.edu/doi/pdf/10.14778/3636218.3636241">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/jackwaudby/mammoths-are-slow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="title">Take Out the TraChe: Maximizing (Tra)nsactional Ca(che) Hit Rate</div>
+          <div class="authors">
+            <b>Audrey Cheng</b>, David Chu, Terrance Li, Jason Chan, Natacha Crooks, 
+            Joseph M. Hellerstein, Ion Stoica, Xiangyao Yu
+          </div>
+          <div class="meta-line">
+            <span class="venue">OSDI 2023, <span class="award">Meta Next-Generation Data Infrastructure Research Award</span></span>
+            <span class="links">
+              <a href="https://www.usenix.org/system/files/osdi23-cheng.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/audreyccheng/detox">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+              <a href="https://audreyccheng.com/blog/transaction-caching">Blog Post</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="title">TAOBench: An End-to-End Benchmark for Social Network Workloads</div>
+          <div class="authors">
+            <b>Audrey Cheng</b>, Xiao Shi, Aaron Kabcenell, Shilpa Lawande, Hamza Qadeer, 
+            Jason Chan, Harrison Tin, Ryan Zhao, Peter Bailis, Mahesh Balakrishnan, 
+            Nathan Bronson, Natacha Crooks, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">VLDB 2022</span>
+            <span class="links">
+              <a href="https://www.vldb.org/pvldb/vol15/p1965-cheng.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/audreyccheng/taobench">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+              <a href="https://engineering.fb.com/2022/09/07/open-source/taobench/">Meta Blog Post</a>
+              <a href="https://audreyccheng.com/blog/taobench">Blog Post</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="title">RAMP-TAO: Layering Atomic Transactions on Facebook's Online TAO Data Store</div>
+          <div class="authors">
+            <b>Audrey Cheng</b>, Xiao Shi, Lu Pan, Anthony Simpson, Neil Wheaton, 
+            Shilpa Lawande, Nathan Bronson, Peter Bailis, Natacha Crooks, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">VLDB 2021, <span class="award">Best Industry Paper Award</span></span>
+            <span class="links">
+              <a href="http://www.vldb.org/pvldb/vol14/p3014-cheng.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://vimeo.com/667043993">Talk</a>
+              <a href="https://engineering.fb.com/2021/08/18/core-data/ramp-tao/">Blog Post</a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="title">Ownership: A Distributed Futures System for Fine-Grained Dynamic Tasks</div>
+          <div class="authors">
+            Stephanie Wang, Eric Liang, Edward Oakes, Benjamin Hindman, Frank Sifei Luan, 
+            <b>Audrey Cheng</b>, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">NSDI 2021</span>
+            <span class="links">
+              <a href="https://www.usenix.org/system/files/nsdi21-wang.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="title">Gryff: Unifying Consensus and Shared Registers</div>
+          <div class="authors">
+            Matthew Burke, <b>Audrey Cheng</b>, Wyatt Lloyd
+          </div>
+          <div class="meta-line">
+            <span class="venue">NSDI 2020</span>
+            <span class="links">
+              <a href="https://www.usenix.org/system/files/nsdi20-paper-burke.pdf">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/matthelb/gryff">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="pub">
-      <div class="title">Optimizing LLM Queries in Relational Workloads</div>
-      <div class="authors">Shu Liu, Asim Biswal, Amog Kamsetty, <b>Audrey Cheng</b>, Luis Gaspar Schroeder, Liana Patel, Shiyi Cao, Xiangxi Mo, Joseph E. Gonzalez, Ion Stoica, Matei Zaharia</div>
-      <div class="venue">MLSys 2025</div>
-      <div class="links">
-        <a href="https://openreview.net/pdf?id=R7bK9yycHp">pdf</a>
+      <div class="section-divider"></div>
+
+      <!-- Talks -->
+      <div class="section" id="talks">
+        <h2>Talks</h2>
+        <div class="pub">
+          <div class="title">"Take Out the TraChe: Maximizing (Tra)nsactional Ca(che) Hit Rate"</div>
+          <ul>
+            <li>Sky Lab Winter 2023 Retreat (Monterey, CA): Jan. 2023.</li>
+            <li>Distributed Systems Meeting (Berkeley, CA): Nov. 2022.</li>
+            <li>Sky Lab Summer 2022 Retreat (Lake Tahoe, CA): Jun. 2022.</li>
+          </ul>
+        </div>
+        <div class="pub">
+          <div class="title">"TAOBench: An End-to-End Benchmark for Social Networking Workloads"</div>
+          <ul>
+            <li>Pinterest Infra Talks (Palo Alto, CA): Dec. 2022.</li>
+            <li>HTAP Summit (Palo Alto, CA): Nov. 2022.</li>
+            <li>PingCAP Meetup (Berkeley, CA and <a href="https://www.youtube.com/watch?v=9oAS0U7nIpk">Online</a>): Sep. 2022.</li>
+            <li>Fifteenth TUC Meeting @ SIGMOD 2022 (<a href="https://ldbcouncil.org/event/fifteenth-tuc-meeting/">Online</a>): Jun. 2022.</li>
+            <li>Berkeley Database Seminar (Berkeley, CA): Feb. 2022.</li>
+            <li>Berkeley Progressive Systems Seminar (Online): Dec. 2021.</li>
+            <li>Deep-Dive Talks @ Facebook (Online): Sep. 2021.</li>
+          </ul>
+        </div>
+        <div class="pub">
+          <div class="title">"RAMP-TAO: Layering Atomic Transactions on Facebook's Online TAO Data Store"</div>
+          <ul>
+            <li>LinkedIn Big Data Platforms (Online): Mar 2022.</li>
+            <li>Meta Core Data Tech Talks (Online): Feb 2022.</li>
+            <li>RISELab Winter 2022 Retreat (<a href="https://rise.cs.berkeley.edu/retreat/winter-22-retreat/">Online</a>): Jan 2022.</li>
+            <li>Berkeley Databases Seminar (Online): May 2021.</li>
+            <li>Berkeley Progressive Systems Seminar (Online): Apr. 2021.</li>
+          </ul>
+        </div>
+        <div class="pub">
+          <div class="title">"Gryff: Unifying Consensus and Shared Registers"</div>
+          <ul>
+            <li>DB Engineering @ Facebook (Online): Aug. 2020.</li>
+          </ul>
+        </div>
+        <div class="pub">
+          <div class="title">"Unifying Caching Objectives with Learning Relaxed Belady"</div>
+          <ul>
+            <li>Deep-Dive Talks @ Facebook (Online): Aug. 2020.</li>
+            <li>Princeton Senior Thesis Oral Presentation (Online): May 2020.</li>
+          </ul>
+        </div>
       </div>
-    </div>
 
-    <div class="pub">
-      <div class="title">Mammoths are Slow: The Overlooked Transactions of Graph Data</div>
-      <div class="authors"><b>Audrey Cheng</b>, Jack Waudby, Hugo Firth, Natacha Crooks, Ion Stoica</div>
-      <div class="venue">VLDB 2024</div>
-      <div class="links">
-        <a href="https://dl-acm-org.libproxy.berkeley.edu/doi/pdf/10.14778/3636218.3636241">pdf</a>
-        <a href="https://github.com/jackwaudby/mammoths-are-slow">code</a>
+      <div class="section-divider"></div>
+
+      <!-- Fellowships & Awards -->
+      <div class="section" id="awards">
+        <h2>Fellowships & Awards</h2>
+        <ul>
+          <li>EECS Rising Stars (2024)</li>
+          <li>NSF Graduate Research Fellowship (2022)</li>
+          <li>Meta PhD Research Fellowship (2022)</li>
+          <li>Berkeley Chancellor's Fellowship (2020)</li>
+          <li>Berkeley EECS Excellence Award (2020)</li>
+          <!-- <li>Princeton Kenneth H. Condit '13 Prize (2020)</li> -->
+          <li>Princeton Phi Beta Kappa, Sigma Xi, Tau Beta Pi (2019, 2020)</li>
+          <!-- <li>Princeton George B. Wood Legacy Junior Prize (2019)</li>
+          <li>Princeton Shapiro Prize for Academic Excellence (2017, 2018)</li> -->
+        </ul>
       </div>
-    </div>
 
-    <div class="pub">
-      <div class="title">Take Out the TraChe: Maximizing (Tra)nsactional Ca(che) Hit Rate</div>
-      <div class="authors"><b>Audrey Cheng</b>, David Chu, Terrance Li, Jason Chan, Natacha Crooks, Joseph M. Hellerstein, Ion Stoica, Xiangyao Yu</div>
-      <div class="venue">OSDI 2023</div>
-      <div class="links">
-        <a href="https://www.usenix.org/system/files/osdi23-cheng.pdf">pdf</a>
-        <a href="https://github.com/audreyccheng/detox">code</a>
-        <a href="https://audreyccheng.com/blog/transaction-caching">blog post</a>
+      <div class="section-divider"></div>
+
+      <!-- CV -->
+      <!-- <div class="section" id="cv">
+        <h2>CV</h2>
+        <p><a href="./assets/cv/Audrey_Cheng_CV.pdf">Download PDF</a></p>
+        <object 
+          style="width:100%; height: 75vh; max-height: 900px; border:0; border-radius:12px;" 
+          data="./assets/cv/Audrey_Cheng_CV.pdf" 
+          type="application/pdf">
+          <p>PDF preview not available. <a href="./assets/cv/Audrey_Cheng_CV.pdf">Download the CV</a>.</p>
+        </object>
+      </div> -->
+
+      <!-- <div class="section-divider"></div> -->
+
+      <!-- Contact -->
+      <div class="section" id="contact">
+        <h2>Contact</h2>
+        <p>
+          You can reach me at <b>accheng</b> <i>at</i> <b>berkeley</b> <i>dot</i> <b>edu</b>. 
+          If you are a Berkeley undergrad interested in research, please contact me via email.
+        </p>
       </div>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div>
+      <small>© <span id="year"></span> Audrey Cheng</small>
     </div>
+  </footer>
 
-    <div class="pub">
-      <div class="title">TAOBench: An End-to-End Benchmark for Social Network Workloads</div>
-      <div class="authors"><b>Audrey Cheng</b>, Xiao Shi, Aaron Kabcenell, Shilpa Lawande, Hamza Qadeer, Jason Chan, Harrison Tin, Ryan Zhao, Peter Bailis, Mahesh Balakrishnan, Nathan Bronson, Natacha Crooks, Ion Stoica</div>
-      <div class="venue">VLDB 2022</div>
-      <div class="links">
-        <a href="https://www.vldb.org/pvldb/vol15/p1965-cheng.pdf">pdf</a>
-        <a href="https://github.com/audreyccheng/taobench">code</a>
-        <a href="https://engineering.fb.com/2022/09/07/open-source/taobench/">Meta blog post</a>
-        <a href="https://audreyccheng.com/blog/taobench">blog post</a>
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="title">RAMP-TAO: Layering Atomic Transactions on Facebook’s Online TAO Data Store</div>
-      <div class="authors"><b>Audrey Cheng</b>, Xiao Shi, Lu Pan, Anthony Simpson, Neil Wheaton, Shilpa Lawande, Nathan Bronson, Peter Bailis, Natacha Crooks, Ion Stoica</div>
-      <div class="venue">VLDB 2021 — Best Industry Paper Award</div>
-      <div class="links">
-        <a href="http://www.vldb.org/pvldb/vol14/p3014-cheng.pdf">pdf</a>
-        <a href="https://vimeo.com/667043993">talk</a>
-        <a href="https://engineering.fb.com/2021/08/18/core-data/ramp-tao/">blog post</a>
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="title">Ownership: A Distributed Futures System for Fine-Grained Dynamic Tasks</div>
-      <div class="authors">Stephanie Wang, Eric Liang, Edward Oakes, Benjamin Hindman, Frank Sifei Luan, <b>Audrey Cheng</b>, Ion Stoica</div>
-      <div class="venue">NSDI 2021</div>
-      <div class="links">
-        <a href="https://www.usenix.org/system/files/nsdi21-wang.pdf">pdf</a>
-      </div>
-    </div>
-
-    <div class="pub">
-      <div class="title">Gryff: Unifying Consensus and Shared Registers</div>
-      <div class="authors">Matthew Burke, <b>Audrey Cheng</b>, Wyatt Lloyd</div>
-      <div class="venue">NSDI 2020</div>
-      <div class="links">
-        <a href="https://www.usenix.org/system/files/nsdi20-paper-burke.pdf">pdf</a>
-        <a href="https://github.com/matthelb/gryff">code</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- Talks -->
-  <div class="section" id="talks">
-    <h2>Talks</h2>
-    <div class="pub">
-      <div class="title">“Take Out the TraChe: Maximizing (Tra)nsactional Ca(che) Hit Rate”</div>
-      <ul>
-        <li>Sky Lab Winter 2023 Retreat (Monterey, CA): Jan. 2023.</li>
-        <li>Distributed Systems Meeting (Berkeley, CA): Nov. 2022.</li>
-        <li>Sky Lab Summer 2022 Retreat (Lake Tahoe, CA): Jun. 2022.</li>
-      </ul>
-    </div>
-    <div class="pub">
-      <div class="title">“TAOBench: An End-to-End Benchmark for Social Networking Workloads”</div>
-      <ul>
-        <li>Pinterest Infra Talks (Palo Alto, CA): Dec. 2022.</li>
-        <li>HTAP Summit (Palo Alto, CA): Nov. 2022.</li>
-        <li>PingCAP Meetup (Berkeley, CA and <a href="https://www.youtube.com/watch?v=9oAS0U7nIpk">Online</a>): Sep. 2022.</li>
-        <li>Fifteenth TUC Meeting @ SIGMOD 2022 (<a href="https://ldbcouncil.org/event/fifteenth-tuc-meeting/">Online</a>): Jun. 2022.</li>
-        <li>Berkeley Database Seminar (Berkeley, CA): Feb. 2022.</li>
-        <li>Berkeley Progressive Systems Seminar (Online): Dec. 2021.</li>
-        <li>Deep-Dive Talks @ Facebook (Online): Sep. 2021.</li>
-      </ul>
-    </div>
-    <div class="pub">
-      <div class="title">“RAMP-TAO: Layering Atomic Transactions on Facebook’s Online TAO Data Store”</div>
-      <ul>
-        <li>LinkedIn Big Data Platforms (Online): Mar 2022.</li>
-        <li>Meta Core Data Tech Talks (Online): Feb 2022.</li>
-        <li>RISELab Winter 2022 Retreat (<a href="https://rise.cs.berkeley.edu/retreat/winter-22-retreat/">Online</a>): Jan 2022.</li>
-        <li>Berkeley Databases Seminar (Online): May 2021.</li>
-        <li>Berkeley Progressive Systems Seminar (Online): Apr. 2021.</li>
-      </ul>
-    </div>
-    <div class="pub">
-      <div class="title">“Gryff: Unifying Consensus and Shared Registers”</div>
-      <ul>
-        <li>DB Engineering @ Facebook (Online): Aug. 2020.</li>
-      </ul>
-    </div>
-    <div class="pub">
-      <div class="title">“Unifying Caching Objectives with Learning Relaxed Belady”</div>
-      <ul>
-        <li>Deep-Dive Talks @ Facebook (Online): Aug. 2020.</li>
-        <li>Princeton Senior Thesis Oral Presentation (Online): May 2020.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- Fellowships & Awards -->
-  <div class="section" id="awards">
-    <h2>Fellowships & Awards</h2>
-    <ul>
-      <li>NSF Graduate Research Fellowship (2022)</li>
-      <li>Meta PhD Research Fellowship (2022)</li>
-      <li>Berkeley Chancellor's Fellowship (2020)</li>
-      <li>Berkeley EECS Excellence Award (2020)</li>
-      <li>Princeton Kenneth H. Condit '13 Prize (2020)</li>
-      <li>Princeton Phi Beta Kappa, Sigma Xi, Tau Beta Pi (2019, 2020)</li>
-      <li>Princeton George B. Wood Legacy Junior Prize (2019)</li>
-      <li>Princeton Shapiro Prize for Academic Excellence (2017, 2018)</li>
-    </ul>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- CV -->
-  <div class="section" id="cv">
-    <h2>CV</h2>
-    <p><a href="./assets/cv/Audrey_Cheng_CV.pdf">Download PDF</a></p>
-    <object style="width:100%; height: 75vh; max-height: 900px; border:0; border-radius:12px;" data="./assets/cv/Audrey_Cheng_CV.pdf" type="application/pdf">
-      <p>PDF preview not available. <a href="./assets/cv/Audrey_Cheng_CV.pdf">Download the CV</a>.</p>
-    </object>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- Contact -->
-  <div class="section" id="contact">
-    <h2>Contact</h2>
-    <p>You can reach me at <b>accheng</b> <i>at</i> <b>berkeley</b> <i>dot</i> <b>edu</b>. If you are a Berkeley undergrad interested in research, please contact me via email.</p>
-  </div>
-</section>
-</main> <footer class="container"> <div><small>© <span id="year"></span> Audrey Cheng</small></div> </footer> <script>document.getElementById('year').textContent = new Date().getFullYear()</script> </body> </html>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear()
+  </script>
+</body>
+</html>

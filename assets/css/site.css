@@ -1,4 +1,274 @@
-:root { color-scheme: light dark; --bg:#f7f7fb; --fg:#0f172a; --muted:#334155; --card:#ffffff; --link:#2563eb; }
-@media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --fg:#e2e8f0; --muted:#cbd5e1; --card:#0f172a; --link:#60a5fa; } }
+@import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
 
-{ box-sizing: border-box; } body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background: var(--bg); color: var(--fg); } a { color: var(--link); text-decoration: none; } a:hover { text-decoration: underline; } .container { max-width: 920px; margin: 0 auto; padding: 1.5rem; } .nav { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding: .5rem 0; } .nav .brand { font-weight: 650; letter-spacing:.2px; } .nav .links a { color: var(--fg); text-decoration:none; padding:.4rem .6rem; border-radius:8px; } .nav .links a:hover, .nav .links a.active { background: rgba(2,6,23,.06); } @media (prefers-color-scheme: dark) { .nav .links a:hover, .nav .links a.active { background: rgba(255,255,255,.06); } } .card { background: var(--card); border-radius:14px; box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08); padding: 2rem; } @media (prefers-color-scheme: dark) { .card { box-shadow: 0 10px 30px rgba(0,0,0,.35); } } h1,h2,h3 { margin: 0 0 .5rem; } p { margin: .5rem 0 0; line-height: 1.6; color: var(--muted); } footer { color: var(--muted); font-size: .9rem; padding: 2rem 0; }
+:root {
+    color-scheme: light dark;
+    --bg: #f7f7fb;
+    --fg: #0f172a;
+    --muted: #334155;
+    --card: #ffffff;
+    --link: #2563eb;
+    --border: rgba(2, 6, 23, 0.10);
+    --award: #b45309; /* emphasize award (amber-700) */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1220;
+      --fg: #e2e8f0;
+      --muted: #cbd5e1;
+      --card: #0f172a;
+      --link: #60a5fa;
+      --border: rgba(255, 255, 255, 0.14);
+      --award: #f59e0b; /* lighter amber for dark mode */
+    }
+  }
+  
+  * { box-sizing: border-box; }
+  
+  ::selection {
+    background: color-mix(in oklab, var(--link) 25%, transparent);
+    color: var(--fg);
+  }
+  
+  html, body { 
+    height: 100%; 
+    overflow-x: hidden;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Spectral, Georgia, "Times New Roman", serif;
+    background: var(--bg);
+    color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Use same serif font for headings */
+  h1, h2, h3 {
+    font-family: Spectral, Georgia, "Times New Roman", serif;
+    letter-spacing: -0.01em;
+  }
+  
+  a {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+  a:hover {
+    text-decoration-thickness: 2px;
+  }
+  
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 3px solid color-mix(in oklab, var(--link) 65%, transparent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  .skip-link:focus {
+    left: 12px;
+    top: 12px;
+    width: auto;
+    height: auto;
+    background: var(--card);
+    color: var(--fg);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 16px rgba(2,6,23,0.1);
+  }
+  
+  .container {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+  }
+  
+  main.container {
+    padding-top: 3.5rem;
+  }
+  
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    backdrop-filter: saturate(180%) blur(8px);
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    background: rgba(247, 247, 251, 0.70);
+    border-bottom: 1px solid var(--border);
+  }
+  @media (prefers-color-scheme: dark) {
+    .site-header { background: rgba(11, 18, 32, 0.70); }
+  }
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.1rem 0;
+  }
+  
+  .nav .brand {
+    font-family: Spectral, Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: 0.1px;
+  }
+  
+  .nav .links {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    flex-wrap: wrap;
+  }
+  .nav .links a {
+    color: var(--fg);
+    text-decoration: none;
+    padding: 0.45rem 0.7rem;
+    border-radius: 8px;
+  }
+  .nav .links a:hover,
+  .nav .links a.active {
+    background: rgba(2, 6, 23, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    .nav .links a:hover,
+    .nav .links a.active { background: rgba(255, 255, 255, 0.06); }
+  }
+  
+  .card {
+    background: var(--card);
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+    padding: 2.25rem 1.25rem 1.5rem 1.25rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    .card { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25); }
+  }
+  
+  h1, h2, h3 { margin: 0 0 1.5rem; }
+  p {
+    margin: 0.5rem 0 0;
+    line-height: 1.65;
+    color: var(--muted);
+  }
+  ul { margin: 0.5rem 0 0; padding-inline-start: 1.25rem; }
+  li { margin: 0.25rem 0; }
+  
+  footer {
+    color: var(--muted);
+    font-size: 0.9rem;
+    padding: 2rem 0;
+  }
+  
+  /* Publication link chips */
+  .pub .links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 500;
+    line-height: 1;
+  }
+  .pub .links a:hover {
+    background: color-mix(in oklab, var(--link) 10%, transparent);
+  }
+  .pub .links svg {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+  }
+
+  /* Display venue and links on the same line */
+  .pub .meta-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 0.1rem;
+    flex-wrap: wrap;
+  }
+  .pub .venue {
+    color: var(--muted);
+    font-style: italic;
+  }
+  /* Emphasize award text within venue */
+  .pub .venue .award {
+    color: var(--award);
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  /* Emphasize author's name elegantly */
+  .pub .authors b {
+    color: color-mix(in oklab, var(--link) 55%, var(--fg));
+    font-weight: 700;
+    background: color-mix(in oklab, var(--link) 12%, transparent);
+    padding: 0 .25rem;
+    border-radius: .25rem;
+  }
+  
+  /* News subtle separator (optional) */
+  .news .item + .item { border-top: 1px dashed var(--border); padding-top: .6rem; }
+
+  /* Social links in hero */
+  .social-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+  }
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.28rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: var(--fg);
+    background: transparent;
+    text-decoration: none;
+    line-height: 1; /* prevents baseline from pushing text off-center */
+  }
+  .social-links a span {
+    display: inline-block;
+    line-height: 1; /* keeps label optically centered with the icon */
+  }
+  .social-links a:hover {
+    background: rgba(2, 6, 23, 0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    .social-links a:hover { background: rgba(255, 255, 255, 0.06); }
+  }
+  .social-links svg {
+    display: block;       /* removes inline SVG baseline gap */
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+  }
+  .social-links a[href="linkedin" i] svg {
+    transform: translateY(0.5px);
+    }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
