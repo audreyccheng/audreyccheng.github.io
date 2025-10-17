@@ -56,6 +56,15 @@
     .divider { border-top: 1px solid var(--border, rgba(2,6,23,.08)); margin: 2rem 0 1.25rem; }
     .section-divider { border-top: 1px solid var(--border, #e5e7eb); margin: 2.5rem 0 1.5rem; }
 
+    /* Job market emphasis styling */
+    .job-market {
+      color: color-mix(in oklab, var(--link) 55%, var(--fg));
+      font-weight: 700;
+      background: color-mix(in oklab, var(--link) 12%, transparent);
+      padding: 0 .25rem;
+      border-radius: .25rem;
+    }
+
     /* Anchor offset for sticky header */
     [id] { scroll-margin-top: 86px; }
 
@@ -93,15 +102,15 @@
       <div class="hero" id="about">
         <img src="./assets/img/IMG_3707.jpg" alt="Portrait of Audrey Cheng" loading="eager" width="250" height="250" />
         <div>
-          <h1>Hello, I'm Audrey!</h1>
+          <h1>Hello, I'm Audrey.</h1>
+          <p><span class="job-market">I am on the academic job market this year!</span></p>
           <p>
             I am a final-year PhD student in Computer Science at UC Berkeley in the 
             <a href="https://sky.cs.berkeley.edu/contact/">Sky Computing Lab</a>, 
             advised by <a href="https://people.eecs.berkeley.edu/~istoica/">Ion Stoica</a> 
             and <a href="https://nacrooks.github.io">Natacha Crooks</a>. 
             My research focuses on transaction processing for database systems, particularly on leveraging scheduling algorithms to improve performance. I also work closely with the Themis team at Meta, focusing on consistency and isolation 
-            in large-scale systems.
-          
+            in large-scale systems.          
             Previously, I graduated with a BSE from Princeton University, where I worked with 
             <a href="https://www.cs.princeton.edu/~wlloyd/">Wyatt Lloyd</a> and 
             <a href="https://www.cs.princeton.edu/~li/">Kai Li</a>. 
@@ -199,6 +208,7 @@
       <!-- Publications -->
       <div class="section" id="publications">
         <h2>Publications</h2>
+        <p><span class="job-market">I am on the academic job market this year!</span></p>
 
         <div class="pub">
           <div class="title">Barbarians at the Gate: How AI is Upending Systems Research</div>
@@ -221,6 +231,12 @@
                   <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
                 </svg>
                 <span>Code</span>
+              </a>
+              <a href="https://www.sigops.org/2025/barbarians-at-the-gate-how-ai-is-upending-systems-research/">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>SIGOPS Blog Post</span>
               </a>
             </span>
           </div>
