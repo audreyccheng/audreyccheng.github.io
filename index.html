@@ -100,7 +100,7 @@
     <section class="card">
       <!-- About -->
       <div class="hero" id="about">
-        <img src="./assets/img/IMG_3707.jpg" alt="Portrait of Audrey Cheng" loading="eager" width="250" height="250" />
+        <img src="./assets/img/headshot.png" alt="Portrait of Audrey Cheng" loading="eager" width="250" height="250" />
         <div>
           <h1>Hello, I'm Audrey.</h1>
           <p><span class="job-market">I am on the academic job market this year!</span></p>
@@ -162,8 +162,12 @@
       <div class="section news" id="news">
         <h2>Latest News</h2>
         <div class="item">
+          <div class="date">Sep 2025</div>
+          <div><a href="https://github.com/skydiscover-ai/skydiscover">SkyDiscover</a> framework released alongside <a href="https://arxiv.org/abs/2602.20133">AdaEvolve</a> and <a href="https://arxiv.org/abs/2602.23413">EvoX</a> papers!</div>
+       </div>
+        <div class="item">
           <div class="date">Oct 2025</div>
-          <div><a href="https://arxiv.org/abs/2510.06189">AI-Driven Research paper</a> published on arXiv!</div>
+          <div><a href="https://arxiv.org/abs/2510.06189">AI-Driven Research for Systems</a> paper released!</div>
         </div>
         <div class="item">
             <div class="date">Sep 2025</div>
@@ -177,14 +181,14 @@
           <div class="date">May 2025</div>
           <div><a href="https://www.vldb.org/pvldb/vol17/p2694-cheng.pdf">LLM-SQL paper</a> accepted into MLSys 2025!</div>
         </div> -->
-        <div class="item">
+        <!-- <div class="item">
             <div class="date">Oct 2024</div>
             <div>Selected for <a href="https://risingstars-eecs.mit.edu/participants/audrey-cheng/">EECS Rising Stars</a> workshop!</div>
           </div>
         <div class="item">
           <div class="date">Jun 2024</div>
           <div><a href="https://www.vldb.org/pvldb/vol17/p2694-cheng.pdf">Transaction scheduling paper</a> accepted into VLDB 2024!</div>
-        </div>
+        </div> -->
         <!-- <div class="item">
           <div class="date">Dec 2023</div>
           <div><a href="https://dl-acm-org.libproxy.berkeley.edu/doi/pdf/10.14778/3636218.3636241">Mammoth transactions paper</a> accepted into VLDB 2024!</div>
@@ -208,6 +212,91 @@
       <!-- Publications -->
       <div class="section" id="publications">
         <h2>Publications</h2>
+
+        <div class="pub">
+          <div class="title">AdaEvolve: Adaptive LLM Driven Zeroth-Order Optimization</div>
+          <div class="authors">
+            Mert Cemri, Shubham Agrawal, Akshat Gupta, Shu Liu, <b>Audrey Cheng</b>,
+            Qiuyang Mang, Ashwin Naren, Lutfi Eren Erdogan, Koushik Sen, Matei Zaharia,
+            Alex Dimakis, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">arXiv</span>
+            <span class="links">
+              <a href="https://arxiv.org/abs/2602.20133">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/skydiscover-ai/skydiscover">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="title">EvoX: Meta-Evolution for Automated Discovery</div>
+          <div class="authors">
+            Shu Liu, Shubham Agarwal, Monishwaran Maheswaran, Mert Cemri, Zhifei Li,
+            Qiuyang Mang, Ashwin Naren, Ethan Boneh, <b>Audrey Cheng</b>, Melissa Z. Pan,
+            Alexander Du, Kurt Keutzer, Alexandros G. Dimakis, Koushik Sen, Matei Zaharia, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">Under submission to ICML '26</span>
+            <span class="links">
+              <a href="https://arxiv.org/abs/2602.23413">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/skydiscover-ai/skydiscover">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="title">Let the Barbarians In: How AI Can Accelerate Systems Performance Research</div>
+          <div class="authors">
+            <b>Audrey Cheng*</b>, Shu Liu*, Melissa Pan*, Zhifei Li, Shubham Agarwal, Mert Cemri, 
+            Bowen Wang, Alexander Krentsel, Tian Xia, Jongseok Park, Shuo Yang, Jeff Chen, 
+            Lakshya Agrawal, Ashwin Naren, Shulu Li, Ruiying Ma, Aditya Desai, 
+            Jiarong Xing, Koushik Sen, Matei Zaharia, Ion Stoica
+          </div>
+          <div class="meta-line">
+            <span class="venue">arXiv</span>
+            <span class="links">
+              <a href="https://arxiv.org/abs/2512.14806">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+              <a href="https://github.com/lynnliu030/ADRS">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/>
+                </svg>
+                <span>Code</span>
+              </a>
+              <a href="https://www.sigops.org/2026/let-the-barbarians-in-how-ai-can-accelerate-systems-performance-research/">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>SIGOPS Blog Post</span>
+              </a>
+            </span>
+          </div>
+        </div>
 
         <div class="pub">
           <div class="title">Barbarians at the Gate: How AI is Upending Systems Research</div>
@@ -248,7 +337,7 @@
             Natacha Crooks, Ion Stoica
           </div>
           <div class="meta-line">
-            <span class="venue">VLDB 2025</span>
+            <span class="venue">VLDB 2025, <span class="award">Invited to VLDB Journal on "Best of VLDB 2025"</span></span>
             <span class="links">
               <a href="https://www.vldb.org/pvldb/vol18/p2602-cheng.pdf">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -274,7 +363,7 @@
             Natacha Croks, Joseph E. Gonzalez, Danny Harnik, Ion Stoica
           </div>
           <div class="meta-line">
-            <span class="venue">VLDB 2025</span>
+            <span class="venue">VLDB 2025, <span class="award">Invited to VLDB Journal on "Best of VLDB 2025"</span></span>
             <span class="links">
               <a href="https://www.vldb.org/pvldb/vol18/p2084-liu.pdf">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
