@@ -6,31 +6,32 @@
   <title>Audrey Cheng — CS PhD</title>
   <link rel="stylesheet" href="./assets/css/site.css" />
   <style>
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; font-size: 88%; }
 
     /* Fluid typography */
-    h1 { font-size: clamp(1.6rem, 2.4vw + 1rem, 2.2rem); line-height: 1.15; letter-spacing: -0.01em; }
-    /* Increased section title size */
-    h2 { font-size: clamp(1.35rem, 1.4vw + 1.1rem, 2rem); line-height: 1.2; }
-    p, li { font-size: clamp(1rem, 0.3vw + 0.95rem, 1.05rem); }
+    h1 { font-size: clamp(1.35rem, 2vw + 0.85rem, 1.85rem); line-height: 1.15; letter-spacing: -0.01em; }
+    h2 { font-size: clamp(1.1rem, 1.1vw + 0.9rem, 1.6rem); line-height: 1.2; }
+    p, li { font-size: clamp(0.88rem, 0.2vw + 0.85rem, 0.93rem); }
 
     /* Responsive hero layout */
     .hero {
       display: grid;
-      grid-template-columns: clamp(150px, 25vw, 250px) 1fr;
+      grid-template-columns: clamp(128px, 21vw, 213px) 1fr;
       gap: clamp(1rem, 2vw, 1.5rem);
       align-items: start;
     }
+    .hero-left {
+      margin-top: 4.25rem;
+    }
     .hero img {
-      width: clamp(150px, 25vw, 250px);
-      height: clamp(150px, 25vw, 250px);
+      width: clamp(128px, 21vw, 213px);
+      height: clamp(128px, 21vw, 213px);
       border-radius: 16px;
       object-fit: cover;
       border: 1px solid var(--border, rgba(2,6,23,0.10));
       box-shadow: 0 10px 18px rgba(2,6,23,0.06);
-      margin-top: 4.25rem;
     }
-    .hero > div { max-width: 70ch; }
+    .hero > div { max-width: 75ch; }
 
     .meta { margin-top: .5rem; font-size: .95rem; }
 
@@ -87,10 +88,10 @@
         <div class="links">
           <!-- <a href="#about">About</a>
           <a href="#news">News</a> -->
+          <a href="./cv.html">CV</a>
           <a href="#publications">Publications</a>
           <!-- <a href="#talks">Talks</a>
           <a href="#awards">Awards</a> -->
-          <!-- <a href="#cv">CV</a> -->
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -101,52 +102,28 @@
     <section class="card">
       <!-- About -->
       <div class="hero" id="about">
-        <img src="./assets/img/headshot.png" alt="Portrait of Audrey Cheng" loading="eager" width="250" height="250" />
-        <div>
-          <h1>Hello, I'm Audrey.</h1>
-          <p><span class="job-market">I am on the academic job market this year!</span></p>
-          <p>
-            I am a final-year PhD student in Computer Science at UC Berkeley in the 
-            <a href="https://sky.cs.berkeley.edu/contact/">Sky Computing Lab</a>, 
-            advised by <a href="https://people.eecs.berkeley.edu/~istoica/">Ion Stoica</a> 
-            and <a href="https://nacrooks.github.io">Natacha Crooks</a>. 
-            My research focuses on optimizing performance for database systems. Recently, I have been co-leading an initiative on <a href="https://arxiv.org/abs/2510.06189">automating performance optimization</a> and run a <a href="https://ucbskyadrs.github.io/blog/">blog series</a> on these efforts. Please reach out if you are interested in featuring your work! 
-            <p></p>
-            I also work closely with the Themis team at Meta, focusing on improving performance for hyperscale systems.
-            Previously, I graduated with a BSE from Princeton University, where I worked with 
-            <a href="https://www.cs.princeton.edu/~wlloyd/">Wyatt Lloyd</a> and 
-            <a href="https://www.cs.princeton.edu/~li/">Kai Li</a>. 
-             I am supported by an 
-            <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship</a>, a 
-            <a href="https://research.facebook.com/blog/2022/2/announcing-the-recipients-of-the-2022-meta-phd-research-fellowship/">Meta PhD Research Fellowship</a>, 
-            and a <a href="https://grad.berkeley.edu/admissions/apply/fellowships-entering/">Berkeley Chancellor's Fellowship</a>.
-          </p>
-          <div class="social-links meta">
-            <a href="mailto:accheng@berkeley.edu" aria-label="Email">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>
-                <path d="M22 7l-10 6L2 7"/>
-              </svg>
-              <span>Email</span>
-            </a>
-            <a href="https://github.com/audreyccheng" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12a12 12 0 0 0 8.21 11.41c.6.11.82-.26.82-.58l-.01-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.77-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.85.12 3.15.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.22.7.82.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-              <span>GitHub</span>
-            </a>
-            <a href="http://linkedin.com/in/audreyccheng/" aria-label="LinkedIn">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="currentColor" d="M22.23 0H1.77C.79 0 0 .78 0 1.74v20.52C0 23.22.79 24 1.77 24h20.46c.98 0 1.77-.78 1.77-1.74V1.74C24 .78 23.21 0 22.23 0zM7.06 20.45H3.56V9h3.5v11.45zM5.31 7.43a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm15.14 13.02h-3.49v-5.93c0-1.41-.03-3.22-1.96-3.22-1.96 0-2.26 1.53-2.26 3.12v6.03H9.25V9h3.35v1.57h.05c.47-.9 1.63-1.85 3.35-1.85 3.59 0 4.25 2.36 4.25 5.43v6.3z"/>
-                </svg>
-                <span>LinkedIn</span>
-                </a>                
+        <div class="hero-left">
+          <img src="./assets/img/headshot.png" alt="Portrait of Audrey Cheng" loading="eager" width="250" height="250" />
+          <p style="margin-top:0.75rem;text-align:left;">PhD Student, UC Berkeley<br>Email: <a href="mailto:accheng@berkeley.edu">accheng@berkeley.edu</a><br><a href="./cv.html">CV (PDF)</a></p>
+          <div class="social-links" style="margin-top:0.4rem;">
             <a href="https://scholar.google.com/citations?user=a0BFsYUAAAAJ&hl=en" aria-label="Google Scholar">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M22 10L12 4 2 10l10 6 10-6z"/>
                 <path d="M6 12v5a6 6 0 0 0 12 0v-5"/>
               </svg>
               <span>Scholar</span>
+            </a>
+            <a href="http://linkedin.com/in/audreyccheng/" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M22.23 0H1.77C.79 0 0 .78 0 1.74v20.52C0 23.22.79 24 1.77 24h20.46c.98 0 1.77-.78 1.77-1.74V1.74C24 .78 23.21 0 22.23 0zM7.06 20.45H3.56V9h3.5v11.45zM5.31 7.43a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm15.14 13.02h-3.49v-5.93c0-1.41-.03-3.22-1.96-3.22-1.96 0-2.26 1.53-2.26 3.12v6.03H9.25V9h3.35v1.57h.05c.47-.9 1.63-1.85 3.35-1.85 3.59 0 4.25 2.36 4.25 5.43v6.3z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/audreyccheng" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M12 0C5.37 0 0 5.37 0 12a12 12 0 0 0 8.21 11.41c.6.11.82-.26.82-.58l-.01-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.34-1.79-1.34-1.79-1.09-.75.08-.74.08-.74 1.2.09 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.49.99.11-.78.42-1.3.77-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.25 2.85.12 3.15.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22l-.01 3.29c0 .32.22.7.82.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
             </a>
             <a href="https://x.com/audreyccheng" aria-label="Twitter">
               <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -156,6 +133,33 @@
             </a>
           </div>
         </div>
+        <div>
+          <h1>Hello, I'm Audrey.</h1>
+          <p><span class="job-market">I am on the faculty job market this year!</span></p>
+          <p>
+            I am a final-year PhD student in Computer Science at UC Berkeley in the 
+            <a href="https://sky.cs.berkeley.edu/contact/">Sky Computing Lab</a>, 
+            advised by <a href="https://people.eecs.berkeley.edu/~istoica/">Ion Stoica</a> 
+            and <a href="https://nacrooks.github.io">Natacha Crooks</a>. 
+            My research focuses on optimizing performance for database systems. Recently, I have been co-leading an initiative on <a href="https://arxiv.org/abs/2510.06189">automating performance optimization</a> for systems and run a <a href="https://ucbskyadrs.github.io/blog/">blog series</a> on these efforts. Please reach out if you are interested in featuring your work!
+          </p>
+
+          <!-- I also work closely with the Themis team at Meta, focusing on improving performance for hyperscale systems. -->
+
+          <p>
+            I am supported by an 
+            <a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship</a>, a 
+            <a href="https://research.facebook.com/blog/2022/2/announcing-the-recipients-of-the-2022-meta-phd-research-fellowship/">Meta PhD Research Fellowship</a>, 
+            and a <a href="https://grad.berkeley.edu/admissions/apply/fellowships-entering/">Berkeley Chancellor's Fellowship</a>. I have been named a <a href="https://risingstars-eecs.mit.edu/participants/audrey-cheng/">Rising Star in EECS</a>. My research has also received a VLDB Best Industry Paper Award and invitations to the Best of VLDB journal. Previously, I graduated with a BSE from Princeton University, where I worked with 
+            <a href="https://www.cs.princeton.edu/~wlloyd/">Wyatt Lloyd</a> and 
+            <a href="https://www.cs.princeton.edu/~li/">Kai Li</a>.
+          </p>
+
+          <p>
+            <b>Industry Impact.</b>
+            Our research on <a href="https://www.vldb.org/pvldb/vol15/p1965-cheng.pdf">contention in modern applications</a> has been deployed at a number of database companies, including <a href="https://engineering.fb.com/2022/09/07/open-source/taobench/">Meta</a>, <a href="https://planetscale.com/blog/taobench-running-social-media-workloads-on-planetscale">PlanetScale</a>, and <a href="https://www.pingcap.com/event/how-tidb-keeps-performance-predictable-under-a-high-load/">TiDB</a>, and has also led to long-term collaborations with <a href="https://cloud.google.com/spanner">Google Cloud Spanner</a> and <a href="https://www.yugabyte.com/">YugabyteDB</a>. Our work on <a href="https://www.vldb.org/pvldb/vol18/p2084-liu.pdf">optimizing cloud storage</a> has been deployed at <a href="https://research.ibm.com/publications/skystore-cost-optimized-object-storage-across-regions-and-clouds">IBM</a>. Our research on <a href="https://www.vldb.org/pvldb/vol14/p3014-cheng.pdf">providing stronger transactional guarantees at scale</a> is deployed on <a href="https://engineering.fb.com/2021/08/18/core-infra/ramp-tao/">Messenger</a>. Recently, I have been collaborating with <a href="https://www.databricks.com/">Databricks</a>, <a href="https://www.datadoghq.com/">Datadog</a>, and <a href="https://www.meta.com/">Meta</a> on <a href="https://arxiv.org/abs/2510.06189">using AI to optimize performance</a> for their systems.
+          </p>
+        </div>
       </div>
 
       <div class="section-divider"></div>
@@ -163,6 +167,10 @@
       <!-- Latest News -->
       <div class="section news" id="news">
         <h2>Latest News</h2>
+        <div class="item">
+          <div class="date">Apr 2026</div>
+          <div><a href="https://arxiv.org/abs/2604.06566">AI-Driven Research for Databases</a> paper released!</div>
+        </div>
         <div class="item">
           <div class="date">Mar 2026</div>
           <div><a href="https://www.vldb.org/pvldb/vol18/p2602-cheng.pdf">DRFT</a> and <a href="https://www.vldb.org/pvldb/vol18/p2084-liu.pdf">SkyStore</a> papers were invited to the VLDB Journal on "Best of VLDB 2025"!</div>
@@ -175,10 +183,10 @@
           <div class="date">Oct 2025</div>
           <div><a href="https://arxiv.org/abs/2510.06189">AI-Driven Research for Systems</a> paper released!</div>
         </div>
-        <div class="item">
+        <!-- <div class="item">
             <div class="date">Sep 2025</div>
             <div>Presented <a href="https://www.vldb.org/pvldb/vol18/p2602-cheng.pdf">DRFT</a> paper at VLDB 2025!</div>
-        </div>
+        </div> -->
         <!-- <div class="item">
             <div class="date">Sep 2025</div>
             <div><a href="https://www.vldb.org/pvldb/vol18/p2084-liu.pdf">SkyStore paper</a> accepted into VLDB 2025!</div>
@@ -227,13 +235,21 @@
           </div>
           <div class="meta-line">
             <span class="venue">Under submission at VLDB 2026</span>
+            <span class="links">
+              <a href="https://arxiv.org/abs/2604.06566">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/>
+                </svg>
+                <span>PDF</span>
+              </a>
+            </span>
           </div>
         </div>
 
          <div class="pub">
           <div class="title">AdaEvolve: Adaptive LLM Driven Zeroth-Order Optimization</div>
           <div class="authors">
-            Mert Cemri, Shubham Agrawal, Akshat Gupta, Shu Liu, <b>Audrey Cheng</b>,
+            Mert Cemri*, Shubham Agrawal*, Akshat Gupta, Shu Liu, <b>Audrey Cheng</b>,
             Qiuyang Mang, Ashwin Naren, Lutfi Eren Erdogan, Koushik Sen, Matei Zaharia,
             Alex Dimakis, Ion Stoica
           </div>
@@ -379,7 +395,7 @@
           <div class="authors">
             Shu Liu, Xiangxi Mo, Moshik Hershcovitch, Henric Zhang, <b>Audrey Cheng</b>, 
             Guy Girmonsky, Gil Vernik, Michael Factor, Tiemo Bang, Soujanya Ponnapalli, 
-            Natacha Croks, Joseph E. Gonzalez, Danny Harnik, Ion Stoica
+            Natacha Crooks, Joseph E. Gonzalez, Danny Harnik, Ion Stoica
           </div>
           <div class="meta-line">
             <span class="venue">VLDB 2025, <span class="award">Invited to VLDB Journal on "Best of VLDB 2025"</span></span>
@@ -593,15 +609,47 @@
       <div class="section" id="talks">
         <h2>Talks</h2>
         <div class="pub">
+          <div class="title">"How AI is Disrupting Systems Research"</div>
+          <ul>
+            <li>KTH AI Systems Workshop (Stockholm, Sweden): Mar. 2026.</li>
+            <li>Meta Datacenter Optimization Team (Menlo Park, CA): Feb. 2026.</li>
+            <li>UCSD DSC204A Guest Lecture (Online): Nov. 2025.</li>
+            <li>UC Berkeley CS294-262 Guest Lecture (Berkeley, CA): Nov. 2025.</li>
+            <li>Snowflake AI Seminar (Online): Oct. 2025.</li>
+          </ul>
+        </div>
+        <div class="pub">
+          <div class="title">"Fair Transaction Processing for Multi-Tenant Databases"</div>
+          <ul>
+            <li>Carnegie Mellon University Database Seminar (Online): Oct. 2025.</li>
+            <li>51st International Conference on Very Large Data Bases (VLDB) '25 (London, UK): Sep. 2025.</li>
+            <li>Databricks Database Reading Group (Online): Jul. 2025.</li>
+            <li>Microsoft Gray Systems Lab (Mountain View, CA): Jan. 2025.</li>
+            <li>Sky Lab Summer Retreat (Santa Cruz, CA): May 2024.</li>
+            <li>Berkeley Database Seminar (Berkeley, CA): Apr. 2024.</li>
+          </ul>
+        </div>
+        <div class="pub">
+          <div class="title">"Towards Optimal Transaction Scheduling"</div>
+          <ul>
+            <li>TigerBeetle DB Design Seminar (Online): Dec. 2024.</li>
+            <li>HTAP Summit (Palo Alto, CA): Sep. 2024.</li>
+            <li>50th International Conference on Very Large Data Bases (VLDB) '24 (Guangzhou, China): Aug. 2024.</li>
+            <li>Berkeley NetSys Seminar (Berkeley, CA): Jan. 2024.</li>
+            <li>Berkeley Database Seminar (Berkeley, CA): Apr. 2023.</li>
+          </ul>
+        </div>
+        <div class="pub">
           <div class="title">"Take Out the TraChe: Maximizing (Tra)nsactional Ca(che) Hit Rate"</div>
           <ul>
+            <li>17th USENIX Symposium on Operating Systems Design and Implementation (OSDI) '23 (<a href="https://www.youtube.com/watch?v=QY-83DX-R2I">Boston, MA</a>): Jul. 2023.</li>
             <li>Sky Lab Winter 2023 Retreat (Monterey, CA): Jan. 2023.</li>
             <li>Distributed Systems Meeting (Berkeley, CA): Nov. 2022.</li>
             <li>Sky Lab Summer 2022 Retreat (Lake Tahoe, CA): Jun. 2022.</li>
           </ul>
         </div>
         <div class="pub">
-          <div class="title">"TAOBench: An End-to-End Benchmark for Social Networking Workloads"</div>
+          <div class="title">"TAOBench: An End-to-End Benchmark for Social Network Workloads"</div>
           <ul>
             <li>Pinterest Infra Talks (Palo Alto, CA): Dec. 2022.</li>
             <li>HTAP Summit (Palo Alto, CA): Nov. 2022.</li>
@@ -615,9 +663,9 @@
         <div class="pub">
           <div class="title">"RAMP-TAO: Layering Atomic Transactions on Facebook's Online TAO Data Store"</div>
           <ul>
-            <li>LinkedIn Big Data Platforms (Online): Mar 2022.</li>
-            <li>Meta Core Data Tech Talks (Online): Feb 2022.</li>
-            <li>RISELab Winter 2022 Retreat (<a href="https://rise.cs.berkeley.edu/retreat/winter-22-retreat/">Online</a>): Jan 2022.</li>
+            <li>LinkedIn Big Data Platforms (Online): Mar. 2022.</li>
+            <li>Meta Core Data Tech Talks (Online): Feb. 2022.</li>
+            <li>RISELab Winter 2022 Retreat (<a href="https://rise.cs.berkeley.edu/retreat/winter-22-retreat/">Online</a>): Jan. 2022.</li>
             <li>Berkeley Databases Seminar (Online): May 2021.</li>
             <li>Berkeley Progressive Systems Seminar (Online): Apr. 2021.</li>
           </ul>
@@ -643,9 +691,12 @@
       <div class="section" id="awards">
         <h2>Fellowships & Awards</h2>
         <ul>
+          <li>DRFT paper invited to VLDB Journal on "Best of VLDB" (2025)</li>
+          <li>SkyStore paper invited to VLDB Journal on "Best of VLDB" (2025)</li>
           <li>EECS Rising Stars (2024)</li>
           <li>NSF Graduate Research Fellowship (2022)</li>
           <li>Meta PhD Research Fellowship (2022)</li>
+          <li>VLDB Best Industry Paper Award (2021)</li>
           <li>Berkeley Chancellor's Fellowship (2020)</li>
           <li>Berkeley EECS Excellence Award (2020)</li>
           <!-- <li>Princeton Kenneth H. Condit '13 Prize (2020)</li> -->
@@ -672,13 +723,13 @@
       <!-- <div class="section-divider"></div> -->
 
       <!-- Contact -->
-      <div class="section" id="contact">
+      <!-- <div class="section" id="contact">
         <h2>Contact</h2>
         <p>
           You can reach me at <b>accheng</b> <i>at</i> <b>berkeley</b> <i>dot</i> <b>edu</b>. 
           If you are a Berkeley undergrad interested in research, please contact me via email.
         </p>
-      </div>
+      </div> -->
     </section>
   </main>
 

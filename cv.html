@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV — Audrey Cheng</title>
+  <link rel="stylesheet" href="./assets/css/site.css" />
+  <style>
+    html { scroll-behavior: smooth; font-size: 88%; }
+    [id] { scroll-margin-top: 86px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="./index.html" style="color:var(--fg);text-decoration:none;">Audrey Cheng</a>
+        <div class="links">
+          <a href="./cv.html" class="active">CV</a>
+          <a href="./index.html#publications">Publications</a>
+          <a href="./index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>CV</h1>
+      <p><a href="./assets/img/Audrey_CV.pdf">Download PDF</a></p>
+      <object
+        style="width:100%; height:80vh; max-height:1000px; border:0; border-radius:12px;"
+        data="./assets/img/Audrey_CV.pdf"
+        type="application/pdf">
+        <p>PDF preview not available. <a href="./assets/img/Audrey_CV.pdf">Download the CV</a>.</p>
+      </object>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small>&copy; <span id="yr"></span> Audrey Cheng</small>
+  </footer>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
